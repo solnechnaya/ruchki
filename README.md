@@ -1,0 +1,2 @@
+# lifelog-web
+Lifelog frontend
