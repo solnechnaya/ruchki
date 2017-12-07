@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {AfterContentInit, Component, Input, OnInit} from "@angular/core";
 declare var $: any;
 
 @Component({
@@ -6,12 +6,8 @@ declare var $: any;
     templateUrl: './home.html',
     styleUrls: ['./home.css']
 })
-export class HomeComponent implements OnInit{
-    ngOnInit(): void {
-
-    }
-
-    ngAfterViewChecked() {
+export class HomeComponent implements AfterContentInit {
+    ngAfterContentInit(): void {
         $('.sl').slick({
             autoplay: true,
             autoplaySpeed: 3000,
@@ -32,8 +28,5 @@ export class HomeComponent implements OnInit{
                 }
             ]
         });
-        console.log('Srabotalo');
-
     }
-
 }
