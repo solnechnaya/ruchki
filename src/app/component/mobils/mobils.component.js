@@ -5,19 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Test';
+var MobilsComponent = (function () {
+    function MobilsComponent() {
     }
-    AppComponent = __decorate([
+    MobilsComponent.prototype.ngOnInit = function () {
+    };
+    MobilsComponent = __decorate([
         core_1.Component({
-            selector: 'app-root',
-            templateUrl: './app.component.html',
-        })
-    ], AppComponent);
-    return AppComponent;
+            selector: 'mobils',
+            templateUrl: './mobils.component.html',
+            styleUrls: ['./mobils.component.css']
+        }),
+        __metadata("design:paramtypes", [])
+    ], MobilsComponent);
+    return MobilsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MobilsComponent = MobilsComponent;
+//# sourceMappingURL=mobils.component.js.map

@@ -6,6 +6,7 @@ declare var $: any;
     templateUrl: './home.html',
     styleUrls: ['./home.css']
 })
+
 export class HomeComponent implements AfterContentInit {
     ngAfterContentInit(): void {
         $('.sl').slick({
@@ -16,17 +17,11 @@ export class HomeComponent implements AfterContentInit {
             dots: true,
             slidesToShow: 2,
             slidesToScroll: 2,
-            responsive: [
-                {
-                    breakpoint: 728,
-                    settings: {
-                        centerMode: true,
-                        centerPadding: '10px',
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
+            responsive: [{
+                breakpoint: 728, settings: {
+                    centerMode: true, centerPadding: '10px', slidesToShow: 1, slidesToScroll: 1
                 }
-            ]
+            }]
         });
     }
 }
