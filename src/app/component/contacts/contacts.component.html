@@ -4,7 +4,7 @@
             <div class="menu_top">
                 <ul class="menu">
                     <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list active"><a href="#">Категории</a>
+                    <li class="menu_list"><a [routerLink] = "">Категории</a>
                         <ul class="menu_drop">
                             <li><a [routerLink] = "['/toys']">Игрушки</a></li>
                             <li><a [routerLink] = "['/mobils']">Мобили</a></li>
@@ -13,7 +13,7 @@
                         </ul>
                     </li>
                     <li class="menu_list"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
-                    <li class="menu_list"><a [routerLink] = "">Контакты</a>
+                    <li class="menu_list active"><a [routerLink] = "">Контакты</a>
                         <ul class="menu_drop">
                             <li><a [routerLink] = "['/contacts']">Адрес</a></li>
                             <li><a [routerLink] = "">Карта</a></li>
@@ -22,8 +22,10 @@
                 </ul>
             </div>
             <div class="search_top">
+
                 <input type="search" name="q" placeholder="Поиск товара по категории">
                 <input type="submit" value="">
+
             </div>
         </section>
         <section class="middle">
@@ -32,41 +34,30 @@
     </div>
     <div class="main">
         <div class="chapter">
-            <p><a [routerLink] = "['/home']"><span>Главная</span></a> / <a href="#"><span>Категории</span></a> / Прочее</p>
+            <p><a [routerLink] = "['/contacts']"><span>Контакты</span></a> / Адрес</p>
         </div>
-        <section class="products_by_category">
-            <div class="bl fl1">
-                <div class="image"><img src="../../../assets/images/" alt=""></div>
-                <div class="text">
-                    <h3>...</h3>
-                    <a href="#" class="button">Смотреть...</a>
-                </div>
+        <section class="contacts">
+            <div class="inf tel">
+                <h3>Контакты</h3>
+                <p>Все мои поделки создаются в г. Караганда, Казахстан.<br>Вы можете связаться со мной по телефону:<br>
+                    +7(701)123 45 67</p>
+                <p>Или воспользоваться формой обратной связи</p>
             </div>
-            <div class="bl fl2">
-                <div class="image"><img src="../../../assets/images/" alt=""></div>
-                <div class="text">
-                    <h3>...</h3>
-                    <a href="#" class="button">Смотреть...</a>
-                </div>
-            </div>
-            <div class="bl fl3">
-                <div class="image"><img src="../../../assets/images/" alt=""></div>
-                <div class="text">
-                    <h3>...</h3>
-                    <a href="#" class="button">Смотреть...</a>
-                </div>
-            </div>
-            <div class="bl fl4">
-                <div class="image"><img src="../../../assets/images/" alt=""></div>
-                <div class="text">
-                    <h3>...</h3>
-                    <a href="#" class="button">Смотреть...</a>
+            <div class="inf feedback">
+                <div id="inline">
+                    <h3>Связаться со мной</h3>
+
+                        <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя"/>
+                        <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон"/>
+                        <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail"/>
+                        <textarea id="msg" class="txtarea" name="msg" placeholder="Ваше сообщение:"></textarea>
+                        <button class="button">Отправить</button>
+
                 </div>
             </div>
         </section>
     </div>
-
-    <div class="footer">
+    <div class="footer_1">
         <div class="social">
             <a href="#" class="soc social-vk"></a>
             <a href="#" class="soc social-fb"></a>

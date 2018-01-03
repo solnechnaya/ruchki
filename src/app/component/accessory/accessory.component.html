@@ -3,20 +3,20 @@
         <section class="top">
             <div class="menu_top">
                 <ul class="menu">
-                    <li class="menu_list"><a href="#">Главная</a></li>
+                    <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
                     <li class="menu_list active"><a href="#">Категории</a>
                         <ul class="menu_drop">
-                            <li><a href="#">Игрушки</a></li>
-                            <li><a href="#">Мобили</a></li>
-                            <li><a href="#">Аксессуары</a></li>
-                            <li><a href="#">Прочее</a></li>
+                            <li><a [routerLink] = "['/toys']">Игрушки</a></li>
+                            <li><a [routerLink] = "['/mobils']">Мобили</a></li>
+                            <li><a [routerLink] = "['/accessory']">Аксессуары</a></li>
+                            <li><a [routerLink] = "['/other']">Прочее</a></li>
                         </ul>
                     </li>
-                    <li class="menu_list"><a href="#">Обо мне</a></li>
-                    <li class="menu_list"><a href="#">Контакты</a>
+                    <li class="menu_list"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
+                    <li class="menu_list"><a [routerLink] = "">Контакты</a>
                         <ul class="menu_drop">
-                            <li><a href="#">Адрес</a></li>
-                            <li><a href="#">Карта</a></li>
+                            <li><a [routerLink] = "['/contacts']">Адрес</a></li>
+                            <li><a [routerLink] = "">Карта</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -32,7 +32,7 @@
     </div>
     <div class="main">
         <div class="chapter">
-            <p><a href="#"><span>Главная</span></a> / <a href="#"><span>Категории</span></a> / Аксессуары</p>
+            <p><a [routerLink] = "['/home']"><span>Главная</span></a> / <a [routerLink] = ""><span>Категории</span></a> / Аксессуары</p>
         </div>
         <section class="products_by_category">
             <div class="bl fl1">

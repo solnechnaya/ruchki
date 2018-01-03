@@ -4,8 +4,8 @@
         <section class="top">
             <div class="menu_top">
                 <ul class="menu">
-                    <li class="menu_list active"><a href="#">Главная</a></li>
-                    <li class="menu_list"><a href="#">Категории</a>
+                    <li class="menu_list active"><a [routerLink] = "">Главная</a></li>
+                    <li class="menu_list"><a [routerLink] = "">Категории</a>
                         <ul class="menu_drop">
                             <li><a [routerLink] = "['/toys']">Игрушки</a></li>
                             <li><a [routerLink] = "['/mobils']">Мобили</a></li>
@@ -13,11 +13,11 @@
                             <li><a [routerLink] = "['/other']">Прочее</a></li>
                         </ul>
                     </li>
-                    <li class="menu_list"><a href="#">Обо мне</a></li>
-                    <li class="menu_list"><a href="#">Контакты</a>
+                    <li class="menu_list"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
+                    <li class="menu_list"><a [routerLink] = "">Контакты</a>
                         <ul class="menu_drop">
-                            <li><a href="#">Адрес</a></li>
-                            <li><a href="#">Карта</a></li>
+                            <li><a [routerLink] = "['/contacts']">Адрес</a></li>
+                            <li><a [routerLink] = "">Карта</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -28,7 +28,7 @@
             </div>
         </section>
         <section class="middle">
-            <div class="logo_top"><img src="../../../assets/images/logo%20SH_1-1.png" alt="логотип"></div>
+            <div class="logo_top"><img src="../../../assets/images/logo SH_1-1.png" alt="логотип"></div>
         </section>
         <section class="lower">
             <div class="sl">
