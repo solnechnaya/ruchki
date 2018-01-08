@@ -19,6 +19,9 @@ var toys_component_1 = require("./component/toys/toys.component");
 var mobils_component_1 = require("./component/mobils/mobils.component");
 var accessory_component_1 = require("./component/accessory/accessory.component");
 var other_component_1 = require("./component/other/other.component");
+var aboutMe_component_1 = require("./component/aboutMe/aboutMe.component");
+var contacts_component_1 = require("./component/contacts/contacts.component");
+var category_component_1 = require("./component/category/category.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +40,10 @@ var AppModule = (function () {
                 toys_component_1.ToysComponent,
                 mobils_component_1.MobilsComponent,
                 accessory_component_1.AccessoryComponent,
-                other_component_1.OtherComponent
+                other_component_1.OtherComponent,
+                aboutMe_component_1.AboutMeComponent,
+                contacts_component_1.ContactsComponent,
+                category_component_1.CategoryComponent
             ],
             providers: [message_service_1.MessageService],
             bootstrap: [app_component_1.AppComponent]

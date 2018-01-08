@@ -3,69 +3,83 @@
         <section class="top">
             <div class="menu_top">
                 <ul class="menu">
-                    <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list active"><a [routerLink] = "['/category']">Категории</a>
+                    <li class="menu_list"><a [routerLink]="['/home']">Главная</a></li>
+                    <li class="menu_list active"><a [routerLink]=" ">Категории</a>
                         <ul class="menu_drop">
-                            <li><a [routerLink] = "['/toys']">Игрушки</a></li>
-                            <li><a [routerLink] = "['/mobils']">Мобили</a></li>
-                            <li><a [routerLink] = "['/accessory']">Аксессуары</a></li>
-                            <li><a [routerLink] = "['/other']">Прочее</a></li>
+                            <li><a [routerLink]="['/toys']">Игрушки</a></li>
+                            <li><a [routerLink]="['/mobils']">Мобили</a></li>
+                            <li><a [routerLink]="['/accessory']">Аксессуары</a></li>
+                            <li><a [routerLink]="['/other']">Прочее</a></li>
                         </ul>
                     </li>
-                    <li class="menu_list"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
-                    <li class="menu_list"><a [routerLink] = "">Контакты</a>
+                    <li class="menu_list"><a [routerLink]="['/aboutMe']">Обо мне</a></li>
+                    <li class="menu_list"><a [routerLink]="">Контакты</a>
                         <ul class="menu_drop">
-                            <li><a [routerLink] = "['/contacts']">Адрес</a></li>
-                            <li><a [routerLink] = "">Карта</a></li>
+                            <li><a [routerLink]="['/contacts']">Адрес</a></li>
+                            <li><a [routerLink]="">Карта</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             <div class="search_top">
+
                 <input type="search" name="q" placeholder="Поиск товара по категории">
                 <input type="submit" value="">
+
             </div>
         </section>
         <section class="middle">
-            <div class="logo_top_2"><img src="../../../assets/images/logo SH_1-1.png" alt="логотип"></div>
+            <div class="logo_top"><img src="../../../assets/images/logo SH_1-1.png" alt="логотип"></div>
+        </section>
+        <section class="lower">
+            <div class="menu_second">
+                <ul class="menu2">
+                    <li><a [routerLink]="['/toys']">Игрушки</a></li>
+                    <li><a [routerLink]="['/mobils']">Мобили</a></li>
+                    <li><a [routerLink]="['/accessory']">Аксессуары</a></li>
+                    <li><a [routerLink]="['/other']">Прочее</a></li>
+                </ul>
+            </div>
         </section>
     </div>
+
     <div class="main">
-        <div class="chapter">
-            <p><a [routerLink] = "['/home']"><span>Главная</span></a> / <a [routerLink] = "['/category']"><span>Категории</span></a> / Аксессуары</p>
-        </div>
-        <section class="products_by_category">
+        <section class="products">
             <div class="bl fl1">
-                <div class="image"><img src="../../../assets/images/pic15.jpg" alt=""></div>
+                <div class="image"><img src="../../../assets/images/pic3.jpg" alt=""></div>
                 <div class="text">
-                    <h3>Браслет</h3>
+                    <h3>Игрушки</h3>
+
                     <a href="#" class="button">Смотреть...</a>
                 </div>
             </div>
             <div class="bl fl2">
-                <div class="image"><img src="../../../assets/images/pic4.jpg" alt=""></div>
+                <div class="image"><img src="../../../assets/images/pic12.jpg" alt=""></div>
                 <div class="text">
-                    <h3>Пояс Пион</h3>
+                    <h3>Мобили</h3>
                     <a href="#" class="button">Смотреть...</a>
                 </div>
             </div>
             <div class="bl fl3">
                 <div class="image"><img src="../../../assets/images/pic5.jpg" alt=""></div>
                 <div class="text">
-                    <h3>Повязка Ромашки</h3>
+                    <h3>Аксессуары</h3>
                     <a href="#" class="button">Смотреть...</a>
                 </div>
             </div>
             <div class="bl fl4">
-                <div class="image"><img src="../../../assets/images/pic6.jpg" alt=""></div>
+                <div class="image"><img src="../../../assets/images/" alt=""></div>
                 <div class="text">
-                    <h3>...</h3>
+                    <h3>Прочее</h3>
                     <a href="#" class="button">Смотреть...</a>
                 </div>
             </div>
+
         </section>
     </div>
+
     <div class="footer">
+
         <div class="social">
             <a href="#" class="soc social-vk"></a>
             <a href="#" class="soc social-fb"></a>
@@ -77,4 +91,6 @@
             <p>Сайт поделок. 2017 год.</p>
         </div>
     </div>
+
+
 </div>

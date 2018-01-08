@@ -4,7 +4,7 @@
             <div class="menu_top">
                 <ul class="menu">
                     <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list active"><a href="#">Категории</a>
+                    <li class="menu_list active"><a [routerLink]="['/category']">Категории</a>
                         <ul class="menu_drop">
                             <li><a [routerLink] = "['/toys']">Игрушки</a></li>
                             <li><a [routerLink] = "['/mobils']">Мобили</a></li>
@@ -32,7 +32,7 @@
     </div>
     <div class="main">
         <div class="chapter">
-            <p><a href="#"><span>Главная</span></a> / <a href="#"><span>Категории</span></a> / Мобили</p>
+            <p><a href="#"><span>Главная</span></a> / <a [routerLink]="['/category']"><span>Категории</span></a> / Мобили</p>
         </div>
         <section class="products_by_category">
             <div class="bl fl1">

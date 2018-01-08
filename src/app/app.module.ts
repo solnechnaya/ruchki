@@ -12,6 +12,9 @@ import { ToysComponent } from './component/toys/toys.component';
 import { MobilsComponent } from './component/mobils/mobils.component';
 import { AccessoryComponent } from './component/accessory/accessory.component';
 import { OtherComponent } from './component/other/other.component';
+import {AboutMeComponent} from './component/aboutMe/aboutMe.component';
+import { ContactsComponent } from './component/contacts/contacts.component';
+import { CategoryComponent } from './component/category/category.component';
 
 @NgModule({
     imports: [
@@ -27,7 +30,10 @@ import { OtherComponent } from './component/other/other.component';
         ToysComponent,
         MobilsComponent,
         AccessoryComponent,
-        OtherComponent
+        OtherComponent,
+        AboutMeComponent,
+        ContactsComponent,
+        CategoryComponent
     ],
     providers: [MessageService],
     bootstrap: [AppComponent]
