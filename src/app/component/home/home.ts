@@ -1,4 +1,6 @@
 import {AfterContentInit, Component, Input, OnInit} from "@angular/core";
+import {Category} from "../../model/category";
+import {RuchkiService} from "../../service/ruchkiService";
 declare var $: any;
 
 @Component({
@@ -7,7 +9,22 @@ declare var $: any;
     styleUrls: ['./home.css']
 })
 
-export class HomeComponent implements AfterContentInit {
+export class HomeComponent implements AfterContentInit, OnInit {
+
+    categories : Category[] = [];
+
+    constructor(private ruchkiService:RuchkiService) { }
+
+    getCategories(): void {
+        this.ruchkiService.getCategories().subscribe(
+            categories => this.categories = categories
+        );
+    }
+
+    ngOnInit(): void {
+        this.getCategories();
+    }
+
     ngAfterContentInit(): void {
         $('.sl').slick({
             autoplay: true,

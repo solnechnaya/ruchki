@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/observable';
 import {catchError, tap} from "rxjs/operators";
 import {Model} from "../model/model";
 import { of }         from 'rxjs/observable/of';
+import {Category} from "../model/category";
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,17 +14,17 @@ const httpOptions = {
 @Injectable()
 export class RuchkiService {
 
-    private url = 'http://localhost:8080/appname';  // URL to web api
+    private url = 'http://localhost:8080';  // URL to web api
     private postUrl = 'http://localhost:8080/test';
 
     constructor(private http: HttpClient) {
     }
 
-    getName(): Observable<Model> {
-        const url = `${this.url}`;
-        return this.http.get<Model>(url).pipe(
-            tap(_ => console.log(`fetched name`)),
-            catchError(this.handleError<Model>(`name`))
+    getCategories(): Observable<Category[]> {
+        const url = `${this.url+'/category/list'}`;
+        return this.http.get<Category[]>(url).pipe(
+            tap(_ => console.log(`получены категории`)),
+            catchError(this.handleError<Category[]>(`name`))
         );
     }
 

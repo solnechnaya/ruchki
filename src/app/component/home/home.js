@@ -5,11 +5,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var ruchkiService_1 = require("../../service/ruchkiService");
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(ruchkiService) {
+        this.ruchkiService = ruchkiService;
+        this.categories = [];
     }
+    HomeComponent.prototype.getCategories = function () {
+        var _this = this;
+        this.ruchkiService.getCategories().subscribe(function (categories) { return _this.categories = categories; });
+    };
+    HomeComponent.prototype.ngOnInit = function () {
+        this.getCategories();
+    };
     HomeComponent.prototype.ngAfterContentInit = function () {
         $('.sl').slick({
             autoplay: true,
@@ -31,7 +44,8 @@ var HomeComponent = (function () {
             selector: 'home',
             templateUrl: './home.html',
             styleUrls: ['./home.css']
-        })
+        }),
+        __metadata("design:paramtypes", [ruchkiService_1.RuchkiService])
     ], HomeComponent);
     return HomeComponent;
 }());

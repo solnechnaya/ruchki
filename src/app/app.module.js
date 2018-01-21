@@ -22,6 +22,7 @@ var other_component_1 = require("./component/other/other.component");
 var aboutMe_component_1 = require("./component/aboutMe/aboutMe.component");
 var contacts_component_1 = require("./component/contacts/contacts.component");
 var category_component_1 = require("./component/category/category.component");
+var ruchkiService_1 = require("./service/ruchkiService");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -45,7 +46,7 @@ var AppModule = (function () {
                 contacts_component_1.ContactsComponent,
                 category_component_1.CategoryComponent
             ],
-            providers: [message_service_1.MessageService],
+            providers: [ruchkiService_1.RuchkiService, message_service_1.MessageService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
