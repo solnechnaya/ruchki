@@ -15,6 +15,7 @@ import { OtherComponent } from './component/other/other.component';
 import {AboutMeComponent} from './component/aboutMe/aboutMe.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { CategoryComponent } from './component/category/category.component';
+import {RuchkiService} from "./service/ruchkiService";
 
 @NgModule({
     imports: [
@@ -35,7 +36,7 @@ import { CategoryComponent } from './component/category/category.component';
         ContactsComponent,
         CategoryComponent
     ],
-    providers: [MessageService],
+    providers: [RuchkiService, MessageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
