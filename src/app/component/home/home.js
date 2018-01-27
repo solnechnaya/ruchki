@@ -15,13 +15,19 @@ var HomeComponent = (function () {
     function HomeComponent(ruchkiService) {
         this.ruchkiService = ruchkiService;
         this.categories = [];
+        this.products = [];
     }
     HomeComponent.prototype.getCategories = function () {
         var _this = this;
         this.ruchkiService.getCategories().subscribe(function (categories) { return _this.categories = categories; });
     };
+    HomeComponent.prototype.getProducts = function () {
+        var _this = this;
+        this.ruchkiService.getProducts().subscribe(function (products) { return _this.products = products; });
+    };
     HomeComponent.prototype.ngOnInit = function () {
         this.getCategories();
+        this.getProducts();
     };
     HomeComponent.prototype.ngAfterContentInit = function () {
         $('.sl').slick({

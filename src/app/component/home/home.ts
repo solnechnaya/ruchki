@@ -1,6 +1,7 @@
 import {AfterContentInit, Component, Input, OnInit} from "@angular/core";
 import {Category} from "../../model/category";
 import {RuchkiService} from "../../service/ruchkiService";
+import {Product} from "../../model/product";
 declare var $: any;
 
 @Component({
@@ -12,6 +13,7 @@ declare var $: any;
 export class HomeComponent implements AfterContentInit, OnInit {
 
     categories : Category[] = [];
+    products : Product[] = [];
 
     constructor(private ruchkiService:RuchkiService) { }
 
@@ -21,8 +23,15 @@ export class HomeComponent implements AfterContentInit, OnInit {
         );
     }
 
+    getProducts(): void {
+        this.ruchkiService.getProducts().subscribe(
+            products => this.products = products
+        );
+    }
+
     ngOnInit(): void {
         this.getCategories();
+        this.getProducts();
     }
 
     ngAfterContentInit(): void {

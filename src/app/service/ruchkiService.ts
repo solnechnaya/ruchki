@@ -6,6 +6,7 @@ import {catchError, tap} from "rxjs/operators";
 import {Model} from "../model/model";
 import { of }         from 'rxjs/observable/of';
 import {Category} from "../model/category";
+import {Product} from "../model/product";
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,6 +26,14 @@ export class RuchkiService {
         return this.http.get<Category[]>(url).pipe(
             tap(_ => console.log(`получены категории`)),
             catchError(this.handleError<Category[]>(`name`))
+        );
+    }
+
+    getProducts(): Observable<Product[]> {
+        const url = `${this.url+'/product/list'}`;
+        return this.http.get<Product[]>(url).pipe(
+            tap(_ => console.log(`получены продукты`)),
+            catchError(this.handleError<Product[]>(`name`))
         );
     }
 

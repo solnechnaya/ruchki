@@ -9,21 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var home_1 = require("./component/home/home");
-var toys_component_1 = require("./component/toys/toys.component");
-var mobils_component_1 = require("./component/mobils/mobils.component");
-var accessory_component_1 = require("./component/accessory/accessory.component");
-var other_component_1 = require("./component/other/other.component");
+var categories_component_1 = require("./component/categories/categories.component");
 var aboutMe_component_1 = require("./component/aboutMe/aboutMe.component");
 var contacts_component_1 = require("./component/contacts/contacts.component");
-var category_component_1 = require("./component/category/category.component");
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_1.HomeComponent },
-    { path: 'category', component: category_component_1.CategoryComponent },
-    { path: 'toys', component: toys_component_1.ToysComponent },
-    { path: 'mobils', component: mobils_component_1.MobilsComponent },
-    { path: 'accessory', component: accessory_component_1.AccessoryComponent },
-    { path: 'other', component: other_component_1.OtherComponent },
+    { path: 'categories', component: categories_component_1.CategoriesComponent },
     { path: 'aboutMe', component: aboutMe_component_1.AboutMeComponent },
     { path: 'contacts', component: contacts_component_1.ContactsComponent }
 ];

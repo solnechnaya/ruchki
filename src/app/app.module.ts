@@ -8,13 +8,11 @@ import {MessageService} from "./message.service";
 import {MessagesComponent} from "./component/messages/messages.component";
 import {FormsModule} from "@angular/forms";
 import {HomeComponent} from "./component/home/home";
-import { ToysComponent } from './component/toys/toys.component';
-import { MobilsComponent } from './component/mobils/mobils.component';
-import { AccessoryComponent } from './component/accessory/accessory.component';
-import { OtherComponent } from './component/other/other.component';
+import { CategoriesComponent } from './component/categories/categories.component';
+
 import {AboutMeComponent} from './component/aboutMe/aboutMe.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
-import { CategoryComponent } from './component/category/category.component';
+
 import {RuchkiService} from "./service/ruchkiService";
 
 @NgModule({
@@ -28,13 +26,9 @@ import {RuchkiService} from "./service/ruchkiService";
         AppComponent,
         HomeComponent,
         MessagesComponent,
-        ToysComponent,
-        MobilsComponent,
-        AccessoryComponent,
-        OtherComponent,
+        CategoriesComponent,
         AboutMeComponent,
         ContactsComponent,
-        CategoryComponent
     ],
     providers: [RuchkiService, MessageService],
     bootstrap: [AppComponent]

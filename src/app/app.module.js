@@ -15,13 +15,9 @@ var message_service_1 = require("./message.service");
 var messages_component_1 = require("./component/messages/messages.component");
 var forms_1 = require("@angular/forms");
 var home_1 = require("./component/home/home");
-var toys_component_1 = require("./component/toys/toys.component");
-var mobils_component_1 = require("./component/mobils/mobils.component");
-var accessory_component_1 = require("./component/accessory/accessory.component");
-var other_component_1 = require("./component/other/other.component");
+var categories_component_1 = require("./component/categories/categories.component");
 var aboutMe_component_1 = require("./component/aboutMe/aboutMe.component");
 var contacts_component_1 = require("./component/contacts/contacts.component");
-var category_component_1 = require("./component/category/category.component");
 var ruchkiService_1 = require("./service/ruchkiService");
 var AppModule = (function () {
     function AppModule() {
@@ -38,13 +34,9 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 home_1.HomeComponent,
                 messages_component_1.MessagesComponent,
-                toys_component_1.ToysComponent,
-                mobils_component_1.MobilsComponent,
-                accessory_component_1.AccessoryComponent,
-                other_component_1.OtherComponent,
+                categories_component_1.CategoriesComponent,
                 aboutMe_component_1.AboutMeComponent,
                 contacts_component_1.ContactsComponent,
-                category_component_1.CategoryComponent
             ],
             providers: [ruchkiService_1.RuchkiService, message_service_1.MessageService],
             bootstrap: [app_component_1.AppComponent]
