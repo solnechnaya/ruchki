@@ -15,7 +15,7 @@ var contacts_component_1 = require("./component/contacts/contacts.component");
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: home_1.HomeComponent },
-    { path: 'categories', component: categories_component_1.CategoriesComponent },
+    { path: 'category/:id', component: categories_component_1.CategoriesComponent },
     { path: 'aboutMe', component: aboutMe_component_1.AboutMeComponent },
     { path: 'contacts', component: contacts_component_1.ContactsComponent }
 ];

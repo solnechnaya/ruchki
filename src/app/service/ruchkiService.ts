@@ -37,6 +37,14 @@ export class RuchkiService {
         );
     }
 
+    getCategory(id:number): Observable<Category> {
+        const url = `${this.url+'/category/' + id}`;
+        return this.http.get<Category>(url).pipe(
+            tap(_ => console.log(`получены категория`)),
+            catchError(this.handleError<Category>(`name`))
+        );
+    }
+
     testPost (val: Model): Observable<Model> {
         return this.http.post<Model>(this.postUrl, val, httpOptions).pipe(
             tap((val: Model) => console.log(`added model value=${val.value}`)),
