@@ -19,7 +19,10 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.getCategories = function () {
         var _this = this;
-        this.ruchkiService.getCategories().subscribe(function (categories) { return _this.categories = categories; });
+        this.ruchkiService.getCategories().subscribe(//subscribe -спец метод класса Observable, кот позволяет вып какую-либо функцию после получения ответа
+        function (//subscribe -спец метод класса Observable, кот позволяет вып какую-либо функцию после получения ответа
+            categories) { return _this.categories = categories; } //subscribe вернет массив категорий и он запишется в локальную переменную categories
+        ); // в this.categories попадает результат нашего get-а (массив категорий)
     };
     HomeComponent.prototype.getProducts = function () {
         var _this = this;

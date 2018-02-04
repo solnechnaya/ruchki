@@ -18,9 +18,9 @@ export class HomeComponent implements AfterContentInit, OnInit {
     constructor(private ruchkiService:RuchkiService) { }
 
     getCategories(): void {
-        this.ruchkiService.getCategories().subscribe(
-            categories => this.categories = categories
-        );
+        this.ruchkiService.getCategories().subscribe(//subscribe -спец метод класса Observable, кот позволяет вып какую-либо функцию после получения ответа
+            categories => this.categories = categories//subscribe вернет массив категорий и он запишется в локальную переменную categories
+        );                      // в this.categories попадает результат нашего get-а (массив категорий)
     }
 
     getProducts(): void {
@@ -29,7 +29,7 @@ export class HomeComponent implements AfterContentInit, OnInit {
         );
     }
 
-    ngOnInit(): void {
+    ngOnInit(): void { //выполняется при создании класса
         this.getCategories();
         this.getProducts();
     }

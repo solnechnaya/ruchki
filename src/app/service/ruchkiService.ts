@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http'; //Для взаимодействия с сервером и отправки запросов по протоколу http
 
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/observable'; // Эта библиотека реализует паттерн "асинхронный наблюдатель"
 import {catchError, tap} from "rxjs/operators";
-import {Model} from "../model/model";
 import { of }         from 'rxjs/observable/of';
 import {Category} from "../model/category";
 import {Product} from "../model/product";
@@ -11,8 +10,11 @@ import {Product} from "../model/product";
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+import {Model} from "../model/model";
 
-@Injectable()
+//класс, который отвечает за взаимодействие с BE, его методы обращаются к BE, достают оттуда json-ы и превращают их во внутренние классы typescript-а
+//методы "..POST.."(PUT) отправляют что-то в BE
+@Injectable() //декоратор означает, что сервис сам может использовать другие сервисы (применяется к любому классу сервиса)
 export class RuchkiService {
 
     private url = 'http://localhost:8080';  // URL to web api
@@ -21,15 +23,17 @@ export class RuchkiService {
     constructor(private http: HttpClient) {
     }
 
-    getCategories(): Observable<Category[]> {
-        const url = `${this.url+'/category/list'}`;
-        return this.http.get<Category[]>(url).pipe(
-            tap(_ => console.log(`получены категории`)),
-            catchError(this.handleError<Category[]>(`name`))
+    getCategories(): Observable<Category[]> {//получение списка категорий с BE
+        const url = `${this.url+'/category/list'}`; //const url = `${this.url}` - базовый url, окончание соотвествующее
+        return this.http.get<Category[]>(url).pipe(//hhtp.get - делает запрос типа get по этому url, в <> указывается, что мы хотим получить
+                                                    //в данном случае model(класс Category) для дальнейшего использования
+                                            //pipe - специальная функция, которая обрабатывает результаты выполнения get-а, у нее две спец функции: tap, catchError
+            tap(_ => console.log(`получены категории`)),//выполняется, когда запрос прошел нормально
+            catchError(this.handleError<Category[]>(`name`))//когда произошла ошибка. Выполняется метод handleError, выдающий на консоль ошибку
         );
     }
 
-    getProducts(): Observable<Product[]> {
+    getProducts(): Observable<Product[]> { //получение списка продуктов с BE
         const url = `${this.url+'/product/list'}`;
         return this.http.get<Product[]>(url).pipe(
             tap(_ => console.log(`получены продукты`)),
@@ -37,7 +41,7 @@ export class RuchkiService {
         );
     }
 
-    getCategory(id:number): Observable<Category> {
+    getCategory(id:number): Observable<Category> { //получет одну категорию по id
         const url = `${this.url+'/category/' + id}`;
         return this.http.get<Category>(url).pipe(
             tap(_ => console.log(`получены категория`)),
