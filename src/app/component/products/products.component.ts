@@ -17,18 +17,11 @@ export class ProductsComponent implements OnInit { //export для того, ч�
     categoryName: string  = "";
     product: Product = new Product;
 
-    //productName: string;
-    //productShortDescr: string;
-    //productDescr: string;
-   // productId: number;
-
-
     constructor(private ruchkiService: RuchkiService, private route: ActivatedRoute, private router: Router) {
         router.events.subscribe( event => {//подписка(subscribe) на события (event) из роутинга
 
             if (event instanceof NavigationEnd) { //как только произойдет событие (в данном случае"NavigationEnd" -> выполнение методов
                 this.getCategories();
-                //this.getProducts();
                 this.getCategory();
                 this.getProduct();
             }
@@ -40,20 +33,6 @@ export class ProductsComponent implements OnInit { //export для того, ч�
             categories => this.categories = categories
         );
     }
-
-/*    getProducts(): void { //возвращает отфильтрованные продукты
-        this.products = [];//обнуление массива продуктов
-        this.ruchkiService.getProducts().subscribe( //subscribe -подписка, благодаря ему метод getProducts выполниться, когда уже все продукты будут получены от BE, означает, что в лябду прилетят продукты, полученные с BE
-            products => { //все продукты окажутся в переменной product //=> - лямбда
-                products.forEach((element) => {//fotEach - пройти по массиву продуктов и каждый раз помещать следующий продукт в переменную element
-                    //element - новая переменная лямбды
-                    if (element.categoriesId == +this.route.snapshot.paramMap.get('id')) { //фильтрация по id; '+this.route.snapshot.paramMap.get('id')'-получение id из рута
-                        this.products.push(element); //через push помещаем element в член класса
-                    }
-                });
-            }
-        );
-    }*/
 
     getCategory(): void { //получение имени категории по id
         this.ruchkiService.getCategory(+this.route.snapshot.paramMap.get('id')).subscribe(//"+" перед строкой преобразует строку в число
@@ -70,7 +49,6 @@ export class ProductsComponent implements OnInit { //export для того, ч�
    // выполнение методов при запуске страницы
     ngOnInit(): void {
         this.getCategories();
-        //this.getProducts();
         this.getCategory();
         this.getProduct();
     }
