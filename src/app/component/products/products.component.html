@@ -4,17 +4,17 @@
             <div class="menu_top">
                 <ul class="menu">
                     <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list"><a [routerLink] = "">Категории</a>
+                    <li class="menu_list active"><a [routerLink]="['/category']">Категории</a>
                         <ul class="menu_drop">
                             <li *ngFor="let category of categories">
-                                <a routerLink="/category/{{category.id}}"> <!--в {{}} пишутся переменные ангуляра-->
+                                <a routerLink="/category/{{category.id}}">
                                     {{category.name}}
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu_list"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
-                    <li class="menu_list active"><a [routerLink] = "">Контакты</a>
+                    <li class="menu_list"><a [routerLink] = "">Контакты</a>
                         <ul class="menu_drop">
                             <li><a [routerLink] = "['/contacts']">Адрес</a></li>
                             <li><a [routerLink] = "">Карта</a></li>
@@ -23,42 +23,35 @@
                 </ul>
             </div>
             <div class="search_top">
-
                 <input type="search" name="q" placeholder="Поиск товара по категории">
                 <input type="submit" value="">
-
             </div>
         </section>
         <section class="middle">
             <div class="logo_top_2"><img src="../../../assets/images/logo SH_1-1.png" alt="логотип"></div>
         </section>
     </div>
+
     <div class="main">
         <div class="chapter">
-            <p><a [routerLink] = "['/contacts']"><span>Контакты</span></a> / Адрес</p>
+            <p><a [routerLink] = "['/home']"><span>Главная</span></a> / <span>Категории</span> /
+                <a [routerLink] = ""><span>{{categoryName}}</span></a> / </p>
         </div>
-        <section class="contacts">
-            <div class="inf tel">
-                <h3>Контакты</h3>
-                <p>Все мои поделки создаются в г. Караганда, Казахстан.<br>Вы можете связаться со мной по телефону:<br>
-                    +7(701)123 45 67</p>
-                <p>Или воспользоваться формой обратной связи</p>
-            </div>
-            <div class="inf feedback">
-                <div id="inline">
-                    <h3>Связаться со мной</h3>
+        <section class="products_by_category">
+            <div class="bl">
+                <div class="image"><img src="http://localhost:8080/downloadFile/{{product.id}}" alt=""></div>
 
-                        <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя"/>
-                        <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон"/>
-                        <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail"/>
-                        <textarea id="msg" class="txtarea" name="msg" placeholder="Ваше сообщение:"></textarea>
-                        <button class="button">Отправить</button>
-
+                <div class="text bl1">
+                    <h2>{{product.name}}</h2>
+                    <h3>{{product.shortDescr}}</h3>
+                    <p>{{product.descr}}</p>
                 </div>
             </div>
+
         </section>
     </div>
-    <div class="footer_1">
+
+    <div class="footer">
         <div class="social">
             <a href="#" class="soc social-vk"></a>
             <a href="#" class="soc social-fb"></a>
@@ -70,4 +63,5 @@
             <p>Сайт поделок. 2017 год.</p>
         </div>
     </div>
+
 </div>

@@ -14,6 +14,7 @@ import {AboutMeComponent} from './component/aboutMe/aboutMe.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 
 import {RuchkiService} from "./service/ruchkiService";
+import {ProductsComponent} from "./component/products/products.component";
 
 @NgModule({
     imports: [
@@ -29,6 +30,7 @@ import {RuchkiService} from "./service/ruchkiService";
         CategoriesComponent,
         AboutMeComponent,
         ContactsComponent,
+        ProductsComponent
     ],
     providers: [RuchkiService, MessageService],
     bootstrap: [AppComponent]

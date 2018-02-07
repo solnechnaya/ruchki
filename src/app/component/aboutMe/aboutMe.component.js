@@ -10,10 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var ruchkiService_1 = require("../../service/ruchkiService");
 var AboutMeComponent = (function () {
-    function AboutMeComponent() {
+    function AboutMeComponent(ruchkiService) {
+        this.ruchkiService = ruchkiService;
+        this.categories = [];
     }
+    AboutMeComponent.prototype.getCategories = function () {
+        var _this = this;
+        this.ruchkiService.getCategories().subscribe(function (categories) { return _this.categories = categories; });
+    };
     AboutMeComponent.prototype.ngOnInit = function () {
+        this.getCategories();
     };
     AboutMeComponent = __decorate([
         core_1.Component({
@@ -21,7 +29,7 @@ var AboutMeComponent = (function () {
             templateUrl: './aboutMe.component.html',
             styleUrls: ['./aboutMe.component.css']
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ruchkiService_1.RuchkiService])
     ], AboutMeComponent);
     return AboutMeComponent;
 }());

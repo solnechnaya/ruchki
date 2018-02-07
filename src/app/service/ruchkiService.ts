@@ -44,8 +44,16 @@ export class RuchkiService {
     getCategory(id:number): Observable<Category> { //получет одну категорию по id
         const url = `${this.url+'/category/' + id}`;
         return this.http.get<Category>(url).pipe(
-            tap(_ => console.log(`получены категория`)),
+            tap(_ => console.log(`получена категория`)),
             catchError(this.handleError<Category>(`name`))
+        );
+    }
+
+    getProduct(id:number): Observable<Product> { //получет один продукт по id
+        const url = `${this.url+'/product/' + id}`;
+        return this.http.get<Product>(url).pipe(
+            tap(_ => console.log(`получен продукт`)),
+            catchError(this.handleError<Product>(`name`))
         );
     }
 

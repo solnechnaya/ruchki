@@ -4,19 +4,20 @@
             <div class="menu_top">
                 <ul class="menu">
                     <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list"><a href="['/category']">Категории</a>
+                    <li class="menu_list"><a [routerLink]="">Категории</a>
                         <ul class="menu_drop">
-                            <li><a [routerLink] = "['/toys']">Игрушки</a></li>
-                            <li><a [routerLink] = "['/mobils']">Мобили</a></li>
-                            <li><a [routerLink] = "['/accessory']">Аксессуары</a></li>
-                            <li><a [routerLink] = "['/other']">Прочее</a></li>
+                            <li *ngFor="let category of categories">
+                                <a routerLink="/category/{{category.id}}"> <!--в {{}} пишутся переменные ангуляра-->
+                                    {{category.name}}
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="menu_list active"><a [routerLink] = "">Обо мне</a></li>
-                    <li class="menu_list"><a href="#">Контакты</a>
+                    <li class="menu_list active"><a [routerLink] = "['/aboutMe']">Обо мне</a></li>
+                    <li class="menu_list"><a  [routerLink] = "">Контакты</a>
                         <ul class="menu_drop">
-                            <li><a href="#">Адрес</a></li>
-                            <li><a href="#">Карта</a></li>
+                            <li><a  routerLink = "/contacts">Адрес</a></li>
+                            <li><a  [routerLink] = "">Карта</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -36,7 +37,7 @@
 
     <div class="main">
         <div class="chapter">
-            <p><a href="#"><span>Главная</span></a> / Обо мне</p>
+            <p><a [routerLink] = "['/home']"><span>Главная</span></a> / Обо мне</p>
         </div>
         <section class="inf">
             <h3>Обо мне</h3>

@@ -10,10 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var ruchkiService_1 = require("../../service/ruchkiService");
 var ContactsComponent = (function () {
-    function ContactsComponent() {
+    function ContactsComponent(ruchkiService) {
+        this.ruchkiService = ruchkiService;
+        this.categories = [];
     }
+    ContactsComponent.prototype.getCategories = function () {
+        var _this = this;
+        this.ruchkiService.getCategories().subscribe(function (categories) { return _this.categories = categories; });
+    };
     ContactsComponent.prototype.ngOnInit = function () {
+        this.getCategories();
     };
     ContactsComponent = __decorate([
         core_1.Component({
@@ -21,7 +29,7 @@ var ContactsComponent = (function () {
             templateUrl: './contacts.component.html',
             styleUrls: ['./contacts.component.css']
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ruchkiService_1.RuchkiService])
     ], ContactsComponent);
     return ContactsComponent;
 }());
