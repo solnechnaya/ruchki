@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, Input, OnInit} from "@angular/core";
+import {AfterContentInit, Component, OnInit} from "@angular/core";
 import {Category} from "../../model/category";
 import {RuchkiService} from "../../service/ruchkiService";
 import {Product} from "../../model/product";

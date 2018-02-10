@@ -21,6 +21,7 @@ var contacts_component_1 = require("./component/contacts/contacts.component");
 var ruchkiService_1 = require("./service/ruchkiService");
 var products_component_1 = require("./component/products/products.component");
 var search_component_1 = require("./component/search/search.component");
+var search_page_component_1 = require("./component/search-page/search-page.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,8 @@ var AppModule = (function () {
                 aboutMe_component_1.AboutMeComponent,
                 contacts_component_1.ContactsComponent,
                 products_component_1.ProductsComponent,
-                search_component_1.SearchComponent
+                search_component_1.SearchComponent,
+                search_page_component_1.SearchPageComponent
             ],
             providers: [ruchkiService_1.RuchkiService, message_service_1.MessageService],
             bootstrap: [app_component_1.AppComponent]

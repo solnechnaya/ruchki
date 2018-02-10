@@ -16,6 +16,7 @@ import { ContactsComponent } from './component/contacts/contacts.component';
 import {RuchkiService} from "./service/ruchkiService";
 import {ProductsComponent} from "./component/products/products.component";
 import { SearchComponent } from './component/search/search.component';
+import { SearchPageComponent } from './component/search-page/search-page.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { SearchComponent } from './component/search/search.component';
         AboutMeComponent,
         ContactsComponent,
         ProductsComponent,
-        SearchComponent
+        SearchComponent,
+        SearchPageComponent
     ],
     providers: [RuchkiService, MessageService],
     bootstrap: [AppComponent]
