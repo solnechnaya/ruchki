@@ -18,7 +18,6 @@ import {Model} from "../model/model";
 export class RuchkiService {
 
     private url = 'http://localhost:8080';  // URL to web api
-    private postUrl = 'http://localhost:8080/test';
 
     constructor(private http: HttpClient) {
     }
@@ -56,11 +55,11 @@ export class RuchkiService {
             catchError(this.handleError<Product>(`name`))
         );
     }
-
-    testPost (val: Model): Observable<Model> {
-        return this.http.post<Model>(this.postUrl, val, httpOptions).pipe(
-            tap((val: Model) => console.log(`added model value=${val.value}`)),
-            catchError(this.handleError<Model>('addModel'))
+    //получает массив продуктов по запросу поиска
+    search (val: Model): Observable<Product[]> {//в качестев параметра принимает модель, а возвр список продуктов
+        return this.http.post<Product[]>(this.url+'/search', val, httpOptions).pipe(//через метод post, EP в BE по url /search
+            tap((val: Product[]) => console.log(`ok`)),
+            catchError(this.handleError<Product[]>('addModel'))
         );
     }
 
@@ -80,4 +79,6 @@ export class RuchkiService {
             return of(result as T);
         };
     }
+
+
 }

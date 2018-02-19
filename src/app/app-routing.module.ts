@@ -14,7 +14,7 @@ const routes: Routes = [
     {path: 'product/:id', component: ProductsComponent},
     {path: 'aboutMe', component: AboutMeComponent},
     {path: 'contacts', component: ContactsComponent},
-    {path: 'search-page', component: SearchPageComponent}
+    {path: 'search-page/:search', component: SearchPageComponent}// /:search - означает, что роутинг ожидает параметр
 ];
 
 @NgModule({

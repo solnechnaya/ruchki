@@ -21,7 +21,7 @@ var routes = [
     { path: 'product/:id', component: products_component_1.ProductsComponent },
     { path: 'aboutMe', component: aboutMe_component_1.AboutMeComponent },
     { path: 'contacts', component: contacts_component_1.ContactsComponent },
-    { path: 'search-page', component: search_page_component_1.SearchPageComponent }
+    { path: 'search-page/:search', component: search_page_component_1.SearchPageComponent } // /:search - означает, что роутинг ожидает параметр
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
