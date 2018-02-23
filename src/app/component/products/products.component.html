@@ -4,7 +4,7 @@
             <div class="menu_top">
                 <ul class="menu">
                     <li class="menu_list"><a [routerLink] = "['/home']">Главная</a></li>
-                    <li class="menu_list active"><a [routerLink]="['/category']">Категории</a>
+                    <li class="menu_list"><a [routerLink]="['/category']">Категории</a>
                         <ul class="menu_drop">
                             <li *ngFor="let category of categories">
                                 <a routerLink="/category/{{category.id}}">
@@ -36,7 +36,7 @@
     <div class="main">
         <div class="chapter">
             <p><a [routerLink] = "['/home']"><span>Главная</span></a> / <span>Категории</span> /
-                <a [routerLink] = ""><span>{{categoryName}}</span></a> / </p>
+                <span>{{categoryName}}</span> / {{product.name}}</p>
         </div>
         <section class="products_by_category">
             <div class="bl">
