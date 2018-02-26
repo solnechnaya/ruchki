@@ -1,0 +1,73 @@
+<div id="outer">
+    <div class="header">
+        <section class="top">
+            <div class="menu_top">
+                <ul class="menu">
+                    <li class="menu_list"><a [routerLink]="['/home']">Главная</a></li>
+                    <li class="menu_list"><a [routerLink]="['/category']">Категории</a>
+                        <ul class="menu_drop">
+                            <li *ngFor="let category of categories">
+                                <!--Директива*ngFor-внутренний for, кот проходит по всем кат-ям  и каждое помещ в category-->
+                                <a routerLink="/category/{{category.id}}"><!--задействует роутер-->
+                                    {{category.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu_list"><a [routerLink]="['/aboutMe']">Обо мне</a></li>
+                    <li class="menu_list"><a [routerLink]="">Контакты</a>
+                        <ul class="menu_drop">
+                            <li><a [routerLink]="['/contacts']">Адрес</a></li>
+                            <li><a [routerLink]="">Карта</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <search></search>
+        </section>
+        <section class="middle">
+            <div class="logo_top_2"><img src="../../../assets/images/logo SH_1-1.png" alt="логотип"></div>
+        </section>
+    </div>
+    <div class="main">
+        <div class="chapter">
+            <p><a [routerLink]="['/home']"><span>Главная</span></a> / Поиск</p>
+            <h2>Поиск по запросу "{{search}}"</h2>
+            <div>
+                <form>
+                    <div class="bl2">
+                        <span style="color: #f45201">Сортировать</span>
+                        <a href="#"><span>по имени</span></a>
+                        <a href="#"><span>по цене</span></a>
+                        <a href="#"><span>в наличии</span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="products_by_category">
+            <div class="bl" *ngFor="let product of products">
+                <div class="image"><img width="265" height="300" src="http://localhost:8080/downloadFile/{{product.id}}" alt=""></div>
+                <div class="text">
+                    <h3>{{product.name}}</h3>
+                    <p>{{product.shortDescr}}</p>
+                    <a routerLink="/product/{{product.id}}" class="button">Смотреть...</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="social">
+                <a href="#" class="soc social-vk"></a>
+                <a href="#" class="soc social-fb"></a>
+                <a href="#" class="soc social-pt"></a>
+                <a href="#" class="soc social-tw"></a>
+                <a href="#" class="soc social-inst"></a>
+            </div>
+            <div>
+                <p>Сайт поделок. 2017 год.</p>
+            </div>
+        </div>
+    </footer>
+</div>

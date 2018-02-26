@@ -1,0 +1,32 @@
+.search_top {
+    width: 620px;
+    padding: 5px;
+    margin: 5px 0;
+    margin-right: 5%;
+}
+input[type="search"] {
+    border: none;
+    border-radius: 3px;
+    width: 94%;
+    padding: 7px;
+    margin: 5px 0;
+}
+input[type="submit"] {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    background-image:url("../../../assets/images/icon_search_1.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+    vertical-align: bottom;
+    margin: 5px 0;
+}
+input[type="submit"]:hover {
+    background-image:url("../../../assets/images/icon_search_2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
